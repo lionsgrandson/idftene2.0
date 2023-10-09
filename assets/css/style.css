@@ -339,6 +339,7 @@ h6 {
   padding: 10px 20px;
   font-size: 15px;
   color: #37517e;
+  justify-content: center;
 }
 
 .navbar-mobile a:hover,
