@@ -1,41 +1,36 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+// check if form was submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+    // get form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
+    $from = 'email@idftene.com';
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
-
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
-
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
-?>
+    // validate form data
+    if (empty($name) || empty($email) || empty($phone) || empty($message)) {
+        // some form data is missing
+        $error = 'Please fill out all required fields.';
+    } else {
+        // form data is valid
+        // send email
+        $to = 'logitechidfdev@gmail.com';
+        $subject = 'New Message from Contact Form from ' . $name;
+        $body = "Name: $name\nEmail: $email\nPhone: $phone\n\n$message";
+        $headers = "From: $from\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        if (mail($to, $subject, $body, $headers)) {
+            // email was sent
+            $msg = 'Thank you for your message! We will get back to you as soon as possible.';
+            // echo $msg;
+            header("Location: /index.html");
+        } else {
+            // email was not sent
+            $error = 'There was an error sending your message. Please try again later.';
+            // echo $error;
+            header("Location: /index.html");
+        }
+    }
+}
