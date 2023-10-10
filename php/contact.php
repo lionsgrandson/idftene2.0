@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
     $mail_success = mail($to, $subject, $message_body, $headers);
-
+    header('Location: https://flourishing-toffee-be2e06.netlify.app');
     if ($mail_success) {
         echo "Thank you for your message. We will get back to you soon.";
     } else {
