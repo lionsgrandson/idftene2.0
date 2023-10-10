@@ -22,4 +22,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     // Handle the case where the form was not submitted via POST
     echo "Form not submitted.";
+    header("Location: https://idftene.com");
 }
