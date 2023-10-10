@@ -1209,64 +1209,40 @@
               </div>
             </div> -->
 
-            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-              <form
-                action="/forms/contact.php"
-                method="post"
-                role="form"
-                class="php-email-form"
-              >
-                <div class="row">
-                  <div class="form-group col-md-6">
-                    <label for="name">שם</label>
-                    <input
-                      type="text"
-                      name="name"
-                      class="form-control"
-                      id="name"
-                      required
-                    />
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="name">מייל</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      id="email"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="name">נושא</label>
+            <div class="container">
+              <h1 class="text-center">צור קשר</h1>
+              <form id="contactForm" class="text-end" action="/forms/contact.php">
+                <div class="mb-3">
+                  <label for="name" class="form-label">:שם</label>
                   <input
                     type="text"
                     class="form-control"
-                    name="subject"
-                    id="subject"
+                    id="name"
+                    name="name"
                     required
                   />
                 </div>
-                <div class="form-group">
-                  <label for="name">Message</label>
+                <div class="mb-3">
+                  <label for="email" class="form-label">:מייל</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">:נושא</label>
                   <textarea
                     class="form-control"
+                    id="message"
                     name="message"
-                    rows="10"
+                    rows="5"
                     required
                   ></textarea>
                 </div>
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">
-                    Your message has been sent. Thank you!
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit">Send Message</button>
-                </div>
+                <button type="submit" class="btn btn-primary ">שלח</button>
               </form>
             </div>
           </div>
