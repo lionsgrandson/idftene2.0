@@ -1,4 +1,5 @@
 <?php
+echo "This is a test";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
     $name = $_POST["name"];
@@ -14,4 +15,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send email
     $mail_success = mail($to, $subject, $message_body, $headers);
 }
-header('Location: "index.html"');
+header('Location: https://idftene.com');
+echo "This is a test";
