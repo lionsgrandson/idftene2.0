@@ -1,9 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
-    $name = $_POST["myname"];
-    $email = $_POST["myemail"];
-    $message = $_POST["mymessage"];
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $message = $_POST["message"];
 
     // Email configuration
     $to = "logitechidfdev@gmail.com";
@@ -13,5 +13,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
     $mail_success = mail($to, $subject, $message_body, $headers);
-    header('Location: "index.html"');
 }
+header('Location: "index.html"');
