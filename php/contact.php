@@ -13,14 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
     $mail_success = mail($to, $subject, $message_body, $headers);
-    header("Location: https://idftene.com");
 
-    // if ($mail_success) {
-    //     echo "Thank you for your message. We will get back to you soon.";
-    // } else {
-    //     echo "Oops! Something went wrong. Please try again later.";
-    // }
-    // } else {
+    if ($mail_success) {
+        echo "Thank you for your message. We will get back to you soon.";
+    } else {
+        echo "Oops! Something went wrong. Please try again later.";
+    }
+} else {
     // Handle the case where the form was not submitted via POST
-    // echo "Form not submitted.";
+    echo "Form not submitted.";
 }
