@@ -1169,7 +1169,7 @@
 
       <!-- ======= Contact Section ======= -->
 
-      <section id="contact" class="contact">
+      <!-- <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>צור קשר</h2>
@@ -1222,8 +1222,97 @@
             </form>
           </div>
         </div>
+      </section> -->
+      <section class="page-section" id="contact">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h3 class="section-subheading text-muted"></h3>
+          </div>
+          <!-- netlify -->
+          <form id="contactForm" action="/php/contact.php" method="POST">
+            <div class="row align-items-stretch mb-5">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Jon Doe"
+                    required
+                  />
+                  <div
+                    class="invalid-feedback"
+                    data-sb-feedback="name:required"
+                  >
+                    A name is required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                  <div
+                    class="invalid-feedback"
+                    data-sb-feedback="email:required"
+                  >
+                    An email is required.
+                  </div>
+                </div>
+                <div class="form-group mb-md-0">
+                  <input
+                    class="form-control"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="XXX-XXX-XXXX"
+                    required
+                  />
+                  <div
+                    class="invalid-feedback"
+                    data-sb-feedback="phone:required"
+                  >
+                    A phone number is required.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group form-group-textarea mb-md-0">
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    name="message"
+                    placeholder="Your message here"
+                    required
+                  ></textarea>
+                  <div
+                    class="invalid-feedback"
+                    data-sb-feedback="message:required"
+                  >
+                    A message is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                value="submit"
+                name="submit"
+                class="btn btn-primary btn-xl text-uppercase"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </section>
-
       <!-- End Contact Section -->
     </main>
     <!-- End #main -->
