@@ -23,7 +23,9 @@ a:hover {
   color: #73c5eb;
   text-decoration: none;
 }
-
+h4{
+  text-align: end;
+}
 h1,
 h2,
 h3,
